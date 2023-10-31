@@ -2,8 +2,8 @@ import { clsx } from "clsx"
 
 interface Props {children: React.ReactNode
   className?: string
-  component: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
-  variant: 
+  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
+  variant?: 
     'display'     |
     'title-lg'    | 
     'title-base'  | 
