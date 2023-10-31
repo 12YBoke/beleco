@@ -47,45 +47,38 @@ module.exports = {
         black : '#393e41',
       },
       fontSize: {
-        'title-lg': ['5rem', {
+        'display': ['5rem', {
           lineHeight: '100%',
           fontWeight: '800'
-
         }],
-        'title-base': ['2em', {
-          lineHeight: '1em',
-          letterSpacing: '0em',
-          fontWeight: '700'
-
+        'title-lg': ['2rem', {
+          lineHeight: '100%',
+          fontWeight: '800'
         }],
-        'title-sm': ['1.1em', {
-          lineHeight: '1em',
-          letterSpacing: '0em',
-          fontWeight: '500'
-
+        'title-base': ['1.5rem', {
+          lineHeight: '100%',
+          fontWeight: '800'
         }],
-        'title-xs': ['0.8em', {
-          lineHeight: '1em',
-          letterSpacing: '0em',
-          fontWeight: '700'
-
+        'title-sm': ['1rem', {
+          lineHeight: '100%',
+          fontWeight: '600'
         }],
-        'body-lg': ['2em', {
-          lineHeight: '1.1em',
-          letterSpacing: '0em',
+        'title-xs': ['0.75rem', {
+          lineHeight: '100%',
+          fontWeight: '600'
+        }],
+        'body-lg': ['1.5rem', {
+          lineHeight: '100%',
+          fontWeight: '400'
+        }],
+        'body-base': ['1rem', {
+          lineHeight: '100%',
           fontWeight: '400'
 
         }],
-        'body-base': ['1em', {
-          lineHeight: '1.1em',
-          letterSpacing: '0em',
-          fontWeight: '300'
-
-        }],
-        'body-sm': ['0.8em', {
-          lineHeight: '1.1em',
-          letterSpacing: '0em',
-          fontWeight: '100'
+        'body-sm': ['0.75rem', {
+          lineHeight: '100%',
+          fontWeight: '400'
         }],
       },
       borderRadius: {
