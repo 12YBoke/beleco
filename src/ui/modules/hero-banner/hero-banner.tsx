@@ -3,13 +3,14 @@
 import { Container } from "@/ui/components/container/container"
 import { TextSlider } from "@/ui/components/text-slider/text-slider"
 import { Typography } from "@/ui/components/typography/typography"
+import { SearchBar } from "../search-bar/search-bar"
 
 export const HeroBanner = () => {
 
 
 
   return (
-    <Container className="h-[90vh] flex flex-col justify-center items-center gap-10">
+    <Container className="h-[90vh] flex flex-col justify-end items-center gap-10">
       <Container className="md:w-[70vw] text-center flex flex-col justify-center items-center">
         <Typography component="h1" variant="display" className="text-primary-900">La solution graphique pour tous vos projets</Typography>
       </Container>
@@ -37,13 +38,16 @@ export const HeroBanner = () => {
             },
             {
               key: 'option5',
-              content: 'Ou tout autre éléments graphiques pour créer un site web ou un document professionnel'
+              content: 'Ou tout autre éléments graphiques'
             }
           ]}
           className="text-primary-900"
         />
+        <Typography  component="p" variant="body-lg" className="text-primary-900">Vous etes au bon endroit</Typography>
       </Container>
-      
+      <Container className="w-[50%]">
+        <SearchBar/>
+      </Container>
     </Container>
   )
 } 

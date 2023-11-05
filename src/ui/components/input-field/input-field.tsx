@@ -7,11 +7,12 @@ import {
   FormMessage,
 } from "@/shadcnui/ui/form"
 import { Input } from "@/shadcnui/ui/input"
+import clsx from "clsx"
 
 interface Props {
   control: any,
   name: string,
-  label: string,
+  label?: string,
   placeholder: string,
   description? : string,
   type?: 
@@ -19,6 +20,7 @@ interface Props {
     'email'     |
     'file'      |
     'password'  
+  className?: string
 }
 
 export const InputField = ({
@@ -27,7 +29,8 @@ export const InputField = ({
   label,
   placeholder,
   description,
-  type = 'text'
+  type = 'text',
+  className
 }: Props) => {
   return (
     <FormField
@@ -37,7 +40,15 @@ export const InputField = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input className="rounded" placeholder={placeholder} {...field} type={type}/>
+            <Input
+              className={clsx(
+                "rounded focus:ring-primary-Default",
+                className
+              )}  
+              placeholder={placeholder} 
+              {...field} 
+              type={type}
+            />
           </FormControl>
           <FormDescription>
             {description}

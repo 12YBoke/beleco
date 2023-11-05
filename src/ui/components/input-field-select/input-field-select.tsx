@@ -15,14 +15,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/shadcnui/ui/select"
+import clsx from "clsx"
 
 interface Props {
   control: any,
   name: string,
-  label: string,
+  label?: string,
   placeholder: string,
   description?: string,
   options: { id: number, name: string }[]
+  className?: string
 }
 
 export const InputFieldSelect = ({
@@ -31,7 +33,8 @@ export const InputFieldSelect = ({
   label,
   placeholder,
   description,
-  options
+  options,
+  className
 }: Props) => {
   return (
     <FormField
@@ -42,14 +45,14 @@ export const InputFieldSelect = ({
           <FormLabel>{label}</FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value}>
             <FormControl>
-              <SelectTrigger className="rounded" >
+              <SelectTrigger className={clsx("rounded focus:ring-primary-Default", className)} >
                 <SelectValue placeholder={placeholder}/>
               </SelectTrigger>
             </FormControl>
-            <SelectContent>
+            <SelectContent className="bg-white rounded">
               {
                 options.map(option => 
-                  <SelectItem key={option.id} value={option.name}>{option.name}</SelectItem>
+                  <SelectItem key={option.id} value={option.name} className="focus:bg-primary-50">{option.name}</SelectItem>
                 )
               }
             </SelectContent>
