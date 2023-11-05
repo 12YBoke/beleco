@@ -36,7 +36,7 @@ export const SearchBar = () => {
             <InputFieldSelect
               control={form.control}
               name='type'
-              options={[{id: 1, name: 'Excel'},{id: 2, name: 'Word'},{id: 3, name: 'PowerPoint'},{id: 4, name: 'Logo'},{id: 5, name: 'Design UI/UX'},{id: 6, name: 'Photos'}]}
+              options={[{id: 1, name: 'Feuille de calcul'},{id: 2, name: 'Document'},{id: 3, name: 'Presentation'},{id: 4, name: 'Identité graphique'},{id: 5, name: 'Design UI/UX'},{id: 6, name: 'Images et autres'}]}
               placeholder='Selectionnez une categorie'
             />
             <Button Icon={Search}>Rechercher</Button>

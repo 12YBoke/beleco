@@ -3,7 +3,7 @@ import { Container } from "../container/container"
 import clsx from "clsx"
 
 interface Props {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   src: StaticImageData
   alt: string

@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.animate {
+  @apply transition-all duration-200 ease-in-out
+}
+
+.glass-effect {
+  border: 1px solid #FFF;
+  background: linear-gradient(107deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.30) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.gradiant-effect {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.75) 98.44%);
+}
+
+.scroller__inner {
+  @apply flex flex-wrap gap-8;
+}
+
+.scroller__part {
+  @apply flex justify-center items-center rounded w-[360px] h-[200px];
+}
+
+.scroller[data-animated="true"] {
+  @apply overflow-hidden;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  @apply w-max flex-nowrap;
+  animation: scroll var(--_animation-duration, 100s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 50s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 100s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}

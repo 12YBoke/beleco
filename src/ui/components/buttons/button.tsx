@@ -135,7 +135,7 @@ export const  Button = ({
               Icon ?
               <Icon className= {children? "mr-2 h-5 w-5":"h-5 w-5"}/>
               :
-              null
+              <></>
           }
           {children}
         </Link>
@@ -171,7 +171,7 @@ export const  Button = ({
             Icon ?
             <Icon className= {children? "mr-2 h-5 w-5" : "h-5 w-5"}/>
             :
-            null
+            <></>
         }
         {children}
       </_Button>
@@ -205,7 +205,7 @@ export const  Button = ({
             Icon ?
             <Icon className= {children? "mr-2 h-5 w-5":"h-5 w-5"}/>
             :
-            null
+            <></>
         }
         {children}
       </_Button>
@@ -213,6 +213,7 @@ export const  Button = ({
   )
 
   const buttonElement = (
+    
     <>
       {
         buttonType === 'link' ?

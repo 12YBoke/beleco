@@ -24,7 +24,7 @@ const Links: AppLinks[] = MainRoute
 export const Menu = () => {
   return (
     <NavigationMenu>
-      <NavigationMenuList >
+      <NavigationMenuList className="gap-4">
       {
       Links.map(link =>
         <NavigationMenuItem key={link.title} >
@@ -48,11 +48,9 @@ export const Menu = () => {
               </NavigationMenuContent>
             </>
             :
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'rounded')} asChild>
-                <ActiveLink href={link.baseUrl? link.baseUrl : '/'}>
-                  {link.title}
-                </ActiveLink>
-              </NavigationMenuLink>
+            <ActiveLink href={link.baseUrl? link.baseUrl : '/'} className={cn(navigationMenuTriggerStyle(), 'rounded')}>
+              {link.title}
+            </ActiveLink>
             }
         </NavigationMenuItem>
         )
@@ -60,9 +58,6 @@ export const Menu = () => {
       </NavigationMenuList>
     </NavigationMenu>
   )
-
-
-
 }
 
 interface Props {
@@ -74,34 +69,32 @@ interface Props {
   color?: string
 }
 
-const ListItem = ({ className, title, children, Icon, href, color }: Props) => {
+export const ListItem = ({ className, title, children, Icon, href, color }: Props) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <ActiveLink href={href ? href : '/'}
-          className={cn(
-            "group block select-none space-y-1 rounded p-4 leading-none no-underline outline-none transition-colors hover:bg-primary-50",
-            className
-          )}
-        > 
-          <Container className="flex flex-row justify-center gap-4 ">
-            <Container className={cn("flex justify-center items-center px-4 bg-white rounded", color)}>
-              {Icon?
-                <Icon/>
-                :
-                null
-              }
-            </Container>
-            <Container className=" group-hover:text-primary-600">
-              <Typography component="p" variant="body-lg" className="leading-none">{title}</Typography>
-              <Typography component="p" variant="body-base" className="line-clamp-4">
-                {children}
-              </Typography>
-            </Container>
+      <ActiveLink href={href ? href : '/'}
+        className={cn(
+          "group block select-none space-y-1 rounded p-4 leading-none no-underline outline-none transition-colors hover:bg-primary-50",
+          className
+        )}
+      > 
+        <Container className="flex flex-row justify-center gap-4 ">
+          <Container className={cn("flex justify-center items-center px-4 bg-white rounded", color)}>
+            {Icon?
+              <Icon/>
+              :
+              null
+            }
           </Container>
-          
-        </ActiveLink>
-      </NavigationMenuLink>
+          <Container className=" group-hover:text-primary-600">
+            <Typography component="p" variant="body-lg" className="leading-none">{title}</Typography>
+            <Typography component="p" variant="body-base" className="line-clamp-4">
+              {children}
+            </Typography>
+          </Container>
+        </Container>
+        
+      </ActiveLink>
     </li>
   )
 }

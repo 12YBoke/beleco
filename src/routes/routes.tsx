@@ -1,5 +1,5 @@
 import { AppLinks } from "@/types/app-links";
-import { FileImage, FileText, Globe, HelpCircle, Paintbrush2, PencilRuler, Projector, Sheet } from "lucide-react";
+import { FileImage, FileText, Globe, HelpCircle, LogIn, LogOut, Paintbrush2, PencilRuler, Projector, Sheet, UserPlus2 } from "lucide-react";
 
 export const MainRoute : AppLinks[] = [
   {
@@ -14,7 +14,7 @@ export const MainRoute : AppLinks[] = [
         baseUrl: '/Library',
         Icon: Sheet,
         description: 'Ceci est une description et elle sera afficher juste en bas du titre',
-        color: 'group-hover:text-[#107b11]',
+        color: 'group-hover:text-[#5abc11]',
       },
       {
         title: 'Document',
@@ -73,7 +73,31 @@ export const MainRoute : AppLinks[] = [
     ]
   },
   {
-    title: 'Rejoinez nous',
-    baseUrl: '/BecomeMember'
+    title: 'Prix',
+    baseUrl: '/Pricing'
   },
+]
+
+export const LogInRoute : AppLinks[] = [
+  {
+    title: 'Connexion',
+    baseUrl: '/Log-in',
+    Icon: LogIn
+  }
+]
+
+export const SignUpRoute : AppLinks[] = [
+  {
+    title: 'Inscription',
+    baseUrl: '/sign-up',
+    Icon: UserPlus2
+  }
+]
+
+export const LogOutRoute : AppLinks[] = [
+  {
+    title: 'Deconnexion',
+    baseUrl: '/log-out',
+    Icon: LogOut
+  }
 ]

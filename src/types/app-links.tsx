@@ -1,5 +1,5 @@
 export interface AppLinks {
-  title : string
+  title: string
   baseUrl?: string
   Icon?: React.ElementType
   action?: Function

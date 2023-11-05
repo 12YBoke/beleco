@@ -17,6 +17,7 @@ export const TextSlider = ({
   variant = 'body-lg',
   className
 }: Props) => {
+  
   const slider = () => {
     let container = document.querySelector<HTMLElement>('.slider')
     let items : HTMLElement[] = gsap.utils.toArray('.slide')
@@ -31,9 +32,6 @@ export const TextSlider = ({
     gsap.set(container, {
       height : height? height + 10 : 10,
     })
-    
-    console.log(items[2].offsetWidth);
-    console.log(container?.offsetWidth);
     
     let tl = gsap.timeline({repeat: -1, repeatDelay: 0})
     
