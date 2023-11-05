@@ -4,7 +4,6 @@ import { Container } from "@/ui/components/container/container"
 export const Slide =  () => {
   return(
     <Container className="flex flex-col gap-4 py-8 bg-primary-50">
-      <ContainerSlider direction="right" speed="slow" items={LineTwo}/>
       <ContainerSlider direction="left" speed="slow" items={LineOne}/>
     </Container>
   )
